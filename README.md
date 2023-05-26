@@ -1,27 +1,22 @@
 # Serving a Model with TensorFlow Serving
-This project demonstrates the process of serving a pretrained model using TensorFlow Serving. TensorFlow Serving is a production-ready serving system that integrates with the TensorFlow stack, making it easy to deploy models for inference in a production environment.
+This project shows how to use TensorFlow Serving to deliver a model that is already trained. TensorFlow Serving is a system that works well with TensorFlow and helps to make models ready for use in a real-world setting
 
 ## Key Points
-1) Installation: Learn how to install TensorFlow Serving on your machine to set up the serving infrastructure.
-
-2) Pretrained Model: Load a pretrained model that has been trained to classify dogs, cats, and birds. The model has been trained on the datasets of cats and dogs, as well as the Caltech birds dataset.
-
-3) Model Conventions: Save the pretrained model following the conventions required by TensorFlow Serving. This ensures compatibility and smooth integration with the serving system.
-
-4) Web Server Setup: Spin up a web server using TensorFlow Serving that can accept HTTP requests. This server will act as the interface to interact with the deployed model.
-
-5) REST API: Interact with the model through a REST API. Send image data as requests to the server and receive predictions for the input images.
-
-6) Model Versioning: Gain an understanding of model versioning and how TensorFlow Serving handles different versions of the model. This allows for easy updates and management of models in a production environment.
+1) Install TensorFlow Serving on your computer so you can use it to serve your models.
+2) Load a model that already knows how to tell apart dogs, cats, and birds. The model learned from pictures of cats and dogs, and also from the Caltech birds collection.
+3) Save the model in a way that TensorFlow Serving can understand and work with. This makes sure everything runs smoothly and without errors.
+4) Start a web server using TensorFlow Serving that can listen to HTTP requests. This server will be the bridge between you and the model.
+5) Talk to the model through a REST API. Send pictures as requests to the server and get back the model’s guesses for what’s in the pictures.
+6) Learn about model versioning and how TensorFlow Serving deals with different versions of the model. This helps you to easily update and manage your models when they change or improve.
 
 ## Data Preparation
 To test the deployed model, a set of test images has been provided. These images include samples from the dogs, cats, and birds classes.
 
 Downloading Data: Download the test images using the provided link. The images are stored in a zip file.
 
-Unzipping Data: Unzip the images and save them to a designated base directory. The images are divided into separate directories for each class.
+Unzipping Data: Open the zip file and save the images to a folder that you choose. The images are in different folders for each type of animal.
 
-Sample Images: Display sample images from each class to get a visual understanding of the test data.
+Sample Images: Show some images from each folder to see what the test data looks like.
 
 
 Feel free to explore and experiment with different models and datasets to gain further insights into deploying machine learning models with TensorFlow Serving.
