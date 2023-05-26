@@ -71,7 +71,7 @@ To install TensorFlow Serving, you will need to use an older version (2.8.0) as 
 ## Starting the TensorFlow Serving Server
 To start the TensorFlow Serving server and load your trained model, set the necessary environment variables and execute the following command:
 
-python
+
 os.environ["MODEL_DIR"] = MODEL_DIR
 
 %%bash --bg
