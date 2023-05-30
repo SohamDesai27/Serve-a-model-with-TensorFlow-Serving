@@ -1,0 +1,61 @@
+1) Importing necessary libraries and modules:
+ImageDataGenerator from the tensorflow.keras.preprocessing.image module.
+
+2) The code demonstrates the usage of ImageDataGenerator from the TensorFlow Keras library for preprocessing and generating image data for testing. The specific tasks include:
+Normalizing pixel values of the images.
+Setting up a data generator for testing using the flow_from_directory() method of ImageDataGenerator.
+Specifying the directory containing the test images.
+Setting target image size, batch size, class mode, and shuffle parameters.
+Printing the labels assigned to each class in the test data generator.
+The code showcases how to preprocess and generate image data for testing using the ImageDataGenerator class, which is a convenient tool for data augmentation and preprocessing in image-related tasks.
+
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+# Normalize pixel values
+test_datagen = ImageDataGenerator(rescale=1./255)
+
+# Point to the directory with the test images
+val_gen_no_shuffle = test_datagen.flow_from_directory(
+    '/tmp/data/images',
+    target_size=(150, 150),
+    batch_size=32,
+    class_mode='binary',
+    shuffle=True)
+
+# Print the label that is assigned to each class
+print(f"labels for each class in the test generator are: {val_gen_no_shuffle.class_indices}")
+
+# Get a batch of 32 images along with their true label
+data_imgs, labels = next(val_gen_no_shuffle)
+
+# Check shapes
+print(f"data_imgs has shape: {data_imgs.shape}")
+print(f"labels has shape: {labels.shape}")
+
+from tensorflow.keras.preprocessing.image import array_to_img
+
+# Returns string representation of each class
+def get_class(index):
+  if index == 0:
+    return "bird"
+  elif index == 1:
+    return "cat"
+  elif index == 2:
+    return "dog"
+  return None
+
+
+# Plots a numpy array representing an image
+def plot_array(array, label, pred=None):
+  array = np.squeeze(array)
+  img = array_to_img(array)
+  display(img)
+  if pred is None:
+    print(f"Image shows a {get_class(label)}.\n")
+  else:
+    print(f"Image shows a {get_class(label)}. Model predicted it was {get_class(pred)}.\n")
+
+
+# Plot the first 5 images in the batch
+for i in range(5):
+  plot_array(data_imgs[i], labels[i])
