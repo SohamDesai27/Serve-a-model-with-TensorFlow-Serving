@@ -1,4 +1,4 @@
-# Serving a Model with TensorFlow Servin
+# Serving a Model with TensorFlow Serving
 This project shows how to use TensorFlow Serving to deliver a model that is already trained. TensorFlow Serving is a system that works well with TensorFlow and helps to make models ready for use in a real-world setting
 
 ## Key Points
