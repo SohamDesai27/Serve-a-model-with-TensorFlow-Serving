@@ -1,0 +1,3 @@
+!wget -q -P /content/model/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/saved_model.pb
+!wget -q -P /content/model/variables/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/variables/variables.data-00000-of-00001
+!wget -q -P /content/model/variables/ https://storage.googleapis.com/mlep-public/course_1/week2/model-augmented/variables/variables
